@@ -60,7 +60,7 @@ def calculate():
             "FVA": float(total_fva),
             "KVA": float(total_kva),
 
-            "exposure": results["exposure"]
+            "exposure": results["exposure"],
             "ene": results["ene"]
         })
 
