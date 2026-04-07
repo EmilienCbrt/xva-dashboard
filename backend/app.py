@@ -13,6 +13,10 @@ product_info = {
     "Zero Coupon Bond": {"maturity": "5Y"},
 }
 
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok"})
+
 @app.route("/calculate", methods=["POST"])
 def calculate():
     try:
