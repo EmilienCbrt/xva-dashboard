@@ -49,7 +49,7 @@ def calculate():
         )
 
         return jsonify({
-            "product": selected_instrument,
+            "product": product_info[selected_instrument].get("label", selected_instrument),
             "maturity": product_info[selected_instrument]["maturity"],
 
             "theoretical_value": float(theoretical_value),
