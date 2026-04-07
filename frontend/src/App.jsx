@@ -325,11 +325,33 @@ function App() {
                 }}
               >
                 <h3>Expected Exposure Profile</h3>
-                <LineChart
-                  width={700}
-                  height={300}
-                  data={results.exposure || []}
-                >
+                <LineChart width={700} height={300}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="time" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+
+                  <Line
+                    type="monotone"
+                    data={results.exposure || []}
+                    dataKey="value"
+                    name="EE+"
+                    stroke="#60a5fa"
+                    strokeWidth={3}
+                    dot={false}
+                  />
+
+                  <Line
+                    type="monotone"
+                    data={results.ene || []}
+                    dataKey="value"
+                    name="EE-"
+                    stroke="#f87171"
+                    strokeWidth={3}
+                    dot={false}
+                  />
+                </LineChart>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="time" />
                   <YAxis />

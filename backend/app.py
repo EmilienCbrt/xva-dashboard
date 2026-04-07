@@ -61,6 +61,7 @@ def calculate():
             "KVA": float(total_kva),
 
             "exposure": results["exposure"]
+            "ene": results["ene"]
         })
 
     except Exception as e:
