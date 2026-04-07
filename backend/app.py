@@ -6,11 +6,11 @@ app = Flask(__name__)
 CORS(app)
 
 product_info = {
-    "IRS": {"maturity": "5Y"},
+    "IRS": {"maturity": "5Y", "label": "IRS Payer"},
     "FRA": {"maturity": "6M"},
     "Cap": {"maturity": "5Y"},
     "Swaption": {"maturity": "5Yx5Y"},
-    "Zero Coupon Bond": {"maturity": "5Y"},
+    "Zero Coupon Bond": {"maturity": "7Y"},
 }
 
 @app.route("/health", methods=["GET"])
