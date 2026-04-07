@@ -1,5 +1,4 @@
 const API_URL = import.meta.env.VITE_API_URL;
-
 import { useState } from "react";
 import {
   LineChart,
@@ -34,7 +33,7 @@ function App() {
     setResults(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/calculate", {
+      const response = await fetch(`${API_URL}/calculate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -326,7 +325,11 @@ function App() {
                 }}
               >
                 <h3>Expected Exposure Profile</h3>
-                <LineChart width={700} height={300} data={results.exposure || []}>
+                <LineChart
+                  width={700}
+                  height={300}
+                  data={results.exposure || []}
+                >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="time" />
                   <YAxis />
